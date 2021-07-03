@@ -164,6 +164,9 @@ function App() {
                 list={lists}
                 onAddTask={onAddTask}
                 onEditTitle={onEditListTitle}
+                onRemoveTask={onRemoveTask}
+                onEdit={onEditTask}
+                onCompleteTask={onCompleteTask}
                 withoutEmpty
               />
             ))}
