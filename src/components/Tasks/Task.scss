@@ -1,0 +1,23 @@
+.task__items-row {
+    &:hover {
+        img {
+            opacity: 0.2;
+        }
+    }
+}
+
+.icon {
+    display: flex;
+    align-items: center;
+
+    img {
+        opacity: 0;
+        cursor: pointer;
+
+        &:hover {
+            opacity: 0.8;
+        }
+    }
+
+}
+
