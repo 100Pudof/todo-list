@@ -23,7 +23,7 @@ export default function AddTasks({ list, onAddTask }) {
             "completed": false
         }
         axios
-            .post('http://localhost:8000/tasks', obj )
+            .post('/tasks', obj )
             .then(({ data }) => {
                 onAddTask(list.id, data);
                 toggleFormVisible();

@@ -59,7 +59,6 @@ function App() {
   }
 
   const onEditTask = ( listId, taskObj) => {
-    console.log(listId, taskObj)
     const newTaskText = window.prompt('Teкст задачи', taskObj.text);
     if(!newTaskText) {
       return;
@@ -70,7 +69,6 @@ function App() {
         item.tasks = item.tasks.map(task => {
           if(task.id === taskObj.id) {
             task.text = newTaskText;
-            console.log(task)
           }
           return task;
         });
@@ -149,7 +147,6 @@ function App() {
           }}
           onClickItem={item => {
             history.push(`/lists/${item.id}`)
-            // setActiveItem(item)
           }}
           items={list}
           activeItem={activeItem}
