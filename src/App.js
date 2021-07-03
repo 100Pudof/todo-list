@@ -15,12 +15,12 @@ function App() {
 
   useEffect(() => {
     axios
-      .get('https://todo-list-herok.herokuapp.com/api/lists?_expand=color&_embed=tasks')
+      .get('lists?_expand=color&_embed=tasks')
       .then(({ data }) => {
         setList(data)
       });
     axios
-      .get('/colors')
+      .get('colors')
       .then(({ data }) => {
         setColors(data);
       })
@@ -51,7 +51,7 @@ function App() {
       })
       setList(newList);
 
-      axios.delete('https://todo-list-herok.herokuapp.com/api/tasks/' + taskId)
+      axios.delete('tasks/' + taskId)
         .catch(() => {
           alert('Не удалось удалить задачу')
         })
@@ -79,7 +79,7 @@ function App() {
     })
     setList(newList);
     axios
-    .patch('https://todo-list-herok.herokuapp.com/api/tasks/' + taskObj.id, {
+    .patch('tasks/' + taskObj.id, {
       text: newTaskText
     })
     .catch(() => {
@@ -101,7 +101,7 @@ function App() {
     })
     setList(newList);
     axios
-    .patch('https://todo-list-herok.herokuapp.com/api/tasks/' + taskId, {
+    .patch('tasks/' + taskId, {
       completed 
     })
     .catch(() => {
@@ -132,7 +132,7 @@ function App() {
       <div className="todo__sidebar">
         <List
           onClickItem={() => {
-            history.push('/');
+            history.push('');
           }}
           items={[{
             active: history.location.pathname === '/',
