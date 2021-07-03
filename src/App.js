@@ -15,7 +15,7 @@ function App() {
 
   useEffect(() => {
     axios
-      .get('http://localhost:8000/lists?_expand=color&_embed=tasks')
+      .get('https://todo-list-herok.herokuapp.com/api/lists?_expand=color&_embed=tasks')
       .then(({ data }) => {
         setList(data)
       });
@@ -51,7 +51,7 @@ function App() {
       })
       setList(newList);
 
-      axios.delete('http://localhost:8000/tasks/' + taskId)
+      axios.delete('https://todo-list-herok.herokuapp.com/api/tasks/' + taskId)
         .catch(() => {
           alert('Не удалось удалить задачу')
         })
@@ -79,7 +79,7 @@ function App() {
     })
     setList(newList);
     axios
-    .patch('http://localhost:8000/tasks/' + taskObj.id, {
+    .patch('https://todo-list-herok.herokuapp.com/api/tasks/' + taskObj.id, {
       text: newTaskText
     })
     .catch(() => {
@@ -101,7 +101,7 @@ function App() {
     })
     setList(newList);
     axios
-    .patch('http://localhost:8000/tasks/' + taskId, {
+    .patch('https://todo-list-herok.herokuapp.com/api/tasks/' + taskId, {
       completed 
     })
     .catch(() => {
@@ -148,7 +148,7 @@ function App() {
             setList(newList);
           }}
           onClickItem={item => {
-            history.push(`/lists/${item.id}`)
+            history.push(`https://todo-list-herok.herokuapp.com/api/lists/${item.id}`)
             // setActiveItem(item)
           }}
           items={list}
@@ -159,7 +159,7 @@ function App() {
         <AddButtonList onAdd={onAddList} colors={colors} />
       </div>
       <div className="todo__tasks">
-        <Route exact path="/">
+        <Route exact path="https://todo-list-herok.herokuapp.com/api">
           {list &&
             list.map(lists => (
               <Tasks

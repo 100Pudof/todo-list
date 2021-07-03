@@ -27,7 +27,7 @@ export default function AddButtonList({ colors, onAdd }) {
       return
     }
     setLoadingAdd(false);
-    axios.post(' /lists', { name: inputValue, colorId: selectColor })
+    axios.post('https://todo-list-herok.herokuapp.com/api/lists', { name: inputValue, colorId: selectColor })
       .then(({ data }) => {
         const color = colors.filter(c => c.id === selectColor)[0];
         const listObj = { ...data, color };
