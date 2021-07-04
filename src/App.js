@@ -171,6 +171,7 @@ function App() {
               />
             ))}
         </Route>
+        <Route path="/lists/:id">
         {list && activeItem &&
           <Tasks
             onEditTitle={onEditListTitle}
@@ -180,6 +181,8 @@ function App() {
             onEdit={onEditTask}
             onCompleteTask={onCompleteTask}
             />}
+        </Route>
+        
       </div>
     </div>
   );
